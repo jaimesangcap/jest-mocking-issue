@@ -1,16 +1,12 @@
-const {
+import {
   validateUserCredentials
-} = require('./validate')
+} from './validate'
 
-function authenticateUser(credentials) {
+export function authenticateUser(credentials) {
   const result = validateUserCredentials(credentials)
   if (result.isValid) {
     return 'iamtoken'
   }
 
   return null
-}
-
-module.exports = {
-  authenticateUser
 }
